@@ -68,8 +68,8 @@ def obtener_correo_por_placa(placa):
 
 # --- FUNCIÓN PARA ENVIAR CORREO USANDO SMTP ---
 def enviar_correo_smtp(destinatario, placa, dia):
-    remitente = "luis.menchaca@ucb.edu.bo"
-    contraseña = "kvxi kzev vilj lxov"  # Aquí va tu contraseña SMTP institucional
+    remitente = "@ucb.edu.bo"  # hagan la prueba con su correo de la u
+    contraseña = ""      #  aca deben poner una contraseña, algo así kvxi kzev vllj lxev, aca esta link para creen la contraseña: https://youtube.com/shorts/Tuyai2xNwvE?si=IGKBlMi2hVBKC2GO
 
     asunto = f"Notificación de restricción vehicular ({placa})"
     cuerpo = f"""
