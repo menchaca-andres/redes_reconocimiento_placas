@@ -58,14 +58,14 @@ Para cuentas institucionales de diferentes organizaciones, reemplazar smtp.gmail
 Se recomienda usar contraseñas de aplicación o tokens para mayor seguridad.
 
 ## Ejecución en Windows y Mac
-**1.** Abrir terminal o PowerShell (Windows) o Terminal (Mac).
-**2.** Navegar a la carpeta del proyecto.
-**3.** Ejecutar Streamlit:
+1. Abrir terminal o PowerShell (Windows) o Terminal (Mac).
+2. Navegar a la carpeta del proyecto.
+3. Ejecutar Streamlit:
 ```bash
 streamlit run app.py
 ```
-**4.** Se abrirá la interfaz web en tu navegador por defecto.
-**5.** Seleccionar la página "Reconocimiento" o "Registros almacenados" desde el sidebar.
+4. Se abrirá la interfaz web en tu navegador por defecto.
+5. Seleccionar la página "Reconocimiento" o "Registros almacenados" desde el sidebar.
 
 # Uso
 ### 1. Reconocimiento de placas
