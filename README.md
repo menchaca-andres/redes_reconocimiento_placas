@@ -47,6 +47,15 @@ CREATE TABLE datos_personales (
 ```
 ### 3. Configurar usuario y contraseña en la función conectar_bd() de app.py.
 
+## Configuración del correo que será el remitente
+Hacer la prueba con el correo institucional de la UCB en esta parte del código:
+```bash
+def enviar_correo_smtp(destinatario, placa, dia):
+    remitente = "@ucb.edu.bo"
+    contraseña = ""   
+```
+La contraseña será un token de google que será una serie de letras y deben copiarlo antes de cerrar la pestaña, acá el tutorial: https://youtube.com/shorts/Tuyai2xNwvE?si=IGKBlMi2hVBKC2GO
+
 ## Configuración de SMTP
 Actualmente se encuentra configurado con Gmail y el puerto 587: 'smtp.gmail.com', 587
 ```bash
