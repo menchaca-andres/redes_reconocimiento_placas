@@ -67,7 +67,7 @@ streamlit run app.py
 4. Se abrirá la interfaz web en tu navegador por defecto.
 5. Seleccionar la página "Reconocimiento" o "Registros almacenados" desde el sidebar.
 
-# Uso
+## Uso
 ### 1. Reconocimiento de placas
 - Subir una imagen donde se vea claramente la placa.
 - El sistema detecta la placa y verifica la restricción.
