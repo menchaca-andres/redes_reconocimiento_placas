@@ -2,17 +2,17 @@
 Este proyecto utiliza Streamlit, OpenCV, EasyOCR y SMTP para detectar placas de vehículos desde imágenes, verificar si tienen restricción vehicular y enviar notificaciones por correo electrónico al propietario.
 
 ## Características
-- **Detección de placas de vehículos usando OCR.**
-- **Eliminación de fondo para mejorar la detección.**
-- **Verificación de restricción vehicular según último dígito de la placa**
-- **Almacenamiento de registros en PostgreSQL.**
-- **Notificación automática por correo electrónico a propietarios con placas restringidas.**
-- **Visualización de registros y detalles desde la interfaz web.**
+- Detección de placas de vehículos usando OCR.
+- Eliminación de fondo para mejorar la detección.
+- Verificación de restricción vehicular según último dígito de la placa
+- Almacenamiento de registros en PostgreSQL.
+- Notificación automática por correo electrónico a propietarios con placas restringidas.
+- Visualización de registros y detalles desde la interfaz web.
 
 ## Requisitos
-- **Python 3.9 o superior**
-- **PostgreSQL**
-- **Paquetes de Python:**
+- Python 3.9 o superior
+- PostgreSQL
+- Paquetes de Python:
 ```bash
 pip install streamlit opencv-python-headless numpy easyocr imutils rembg pillow psycopg2-binary pandas
 ```
