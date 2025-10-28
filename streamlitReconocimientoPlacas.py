@@ -77,7 +77,8 @@ def enviar_correo_smtp(destinatario, placa, dia):
     Estimado propietario,
 
     El vehículo con placa {placa} tiene restricción vehicular el día {dia.capitalize()}.
-    Por favor, evite circular para no incurrir en una infracción de 500 Bs.
+    Ante incumplir con la norma de restricción vehicular, usted tiene en una infracción de 500 Bs.
+    Por favor pague mediante el QR.
 
     Saludos cordiales,
     Sistema de Control Vehicular
