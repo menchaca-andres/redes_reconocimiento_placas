@@ -71,7 +71,7 @@ Se recomienda usar contraseñas de aplicación o tokens para mayor seguridad.
 2. Navegar a la carpeta del proyecto.
 3. Ejecutar Streamlit:
 ```bash
-streamlit run app.py
+streamlit streamlitReconocimientoPlacas app.py
 ```
 4. Se abrirá la interfaz web en tu navegador por defecto.
 5. Seleccionar la página "Reconocimiento" o "Registros almacenados" desde el sidebar.
