@@ -27,6 +27,9 @@ CREATE TABLE datos_personales (
 SELECT * FROM datos_personales;
 
 -- Pones un correo real y dejan esa placa
-INSERT INTO datos_personales(nombres, apellido_paterno, apellido_materno, correo, placa_reg) VALUES ('Luis Andres', 'Menchaca', 'Rivero', '4mrvro@gmail.com', '5280 YIN');
+INSERT INTO datos_personales(nombres, apellido_paterno, apellido_materno, correo, placa_reg) VALUES 
+	('Luis Andres', 'Menchaca', 'Rivero', '4mrvro@gmail.com', '5280 YIN'),
+	('Yudith', 'Noa', 'Vargas', 'yudith.noa@ucb.edu.bo', '5280 YIN'),
+	('Jhamile', 'Llapacu', 'Cruz', 'jhamile.llapacu@ucb.edu.bo', '5280 YIN');
 
 DROP TABLE datos_personales;
