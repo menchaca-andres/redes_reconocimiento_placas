@@ -10,6 +10,7 @@ import psycopg2
 import io
 import pandas as pd
 import smtplib
+from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -87,9 +88,15 @@ def enviar_correo_smtp(destinatario, placa, dia):
     msg['To'] = destinatario
     msg['Subject'] = asunto
     msg.attach(MIMEText(cuerpo, 'plain'))
+    
+    try:
+        with open('qr_pago/qr1.PNG', 'rb') as qr_file:
+            qr_image = MIMEImage(qr_file.read(), name='qr1.PNG')
+            msg.attach(qr_image)
+    except FileNotFoundError:
+        st.warning("QR no encontrado")
 
     try:
-        # Cambia "smtp.ucb.edu.bo" y el puerto si tu institución usa otro
         with smtplib.SMTP('smtp.gmail.com', 587) as servidor:
             servidor.starttls()
             servidor.login(remitente, contraseña)
@@ -119,8 +126,8 @@ def obtenerPlaca(location, img, gray):
 # --- FUNCIÓN: Control de restricción vehicular ---
 def verificar_restriccion(placa_texto):
     dias_restriccion = {
-        "lunes": [0, 1],
-        "martes": [2, 3],
+        "lunes": [2, 3],
+        "martes": [0, 1],
         "miércoles": [4, 5],
         "jueves": [6, 7],
         "viernes": [8, 9]
