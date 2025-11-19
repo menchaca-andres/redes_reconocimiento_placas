@@ -13,6 +13,10 @@ import smtplib
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- CONFIGURACIÓN DE LA PÁGINA ---
 st.set_page_config(
@@ -24,10 +28,10 @@ st.set_page_config(
 # --- CONEXIÓN A LA BASE DE DATOS ---
 def conectar_bd():
     return psycopg2.connect(
-        host="localhost",
-        database="db_recplacas",
-        user="postgres",
-        password="admin"
+        host=os.getenv("DB_HOST"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD")
     )
 
 # --- FUNCIÓN PARA GUARDAR EN BD ---
@@ -69,8 +73,8 @@ def obtener_correo_por_placa(placa):
 
 # --- FUNCIÓN PARA ENVIAR CORREO USANDO SMTP ---
 def enviar_correo_smtp(destinatario, placa, dia):
-    remitente = "luis.menchaca@ucb.edu.bo"  # hagan la prueba con su correo de la u
-    contraseña = ""      #  aca deben poner una contraseña, algo así kvxi kzev vllj lxev, aca esta link para creen la contraseña: https://youtube.com/shorts/Tuyai2xNwvE?si=IGKBlMi2hVBKC2GO
+    remitente = os.getenv("EMAIL")  # hagan la prueba con su correo de la u
+    contraseña = os.getenv("EMAIL_PASSWORD")      #  aca deben poner una contraseña, algo así kvxi kzev vllj lxev, aca esta link para creen la contraseña: https://youtube.com/shorts/Tuyai2xNwvE?si=IGKBlMi2hVBKC2GO
 
     asunto = f"Notificación de restricción vehicular ({placa})"
     cuerpo = f"""
@@ -128,8 +132,8 @@ def obtenerPlaca(location, img, gray):
 def verificar_restriccion(placa_texto):
     dias_restriccion = {
         "lunes": [2, 3],
-        "martes": [0, 1],
-        "miércoles": [4, 5],
+        "martes": [4, 5],
+        "miércoles": [0, 1],
         "jueves": [6, 7],
         "viernes": [8, 9]
     }
